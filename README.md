@@ -1,2 +1,2 @@
 # lootXploits
-Bash script for search and looting exploits for a open and detected services.
+Bash script to search for and loot exploits of detected open services.
