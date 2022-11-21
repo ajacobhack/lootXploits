@@ -25,27 +25,36 @@ function ctrl_c(){
 # Banner
 printf "${redColour}%s\n${endColour}" "
 
- _       _______ ________________        _______ _       _______________________________  
-( \     (  ___  |  ___  )__   __/\     /(  ____ | \     (  ___  )__   __|__   __(  ____ \ 
-| (     | (   ) | (   ) |  ) (  ( \   / ) (    )| (     | (   ) |  ) (     ) (  | (    \/ 
-| |     | |   | | |   | |  | |   \ (_) /| (____)| |     | |   | |  | |     | |  | (_____  
-| |     | |   | | |   | |  | |    ) _ ( |  _____) |     | |   | |  | |     | |  (_____  ) 
-| |     | |   | | |   | |  | |   / ( ) \| (     | |     | |   | |  | |     | |        ) | 
-| (____/\ (___) | (___) |  | |  ( /   \ ) )     | (____/\ (___) |__) (___  | |  /\____) | 
-(_______(_______|_______)  )_(  |/     \|/      (_______(_______)_______/  )_(  \_______) 
-                                                                                          
+    	 _       _______ ________________        _______ _       _______________________________  
+    	( \     (  ___  |  ___  )__   __/\     /(  ____ | \     (  ___  )__   __|__   __(  ____ \ 
+    	| (     | (   ) | (   ) |  ) (  ( \   / ) (    )| (     | (   ) |  ) (     ) (  | (    \/ 
+    	| |     | |   | | |   | |  | |   \ (_) /| (____)| |     | |   | |  | |     | |  | (_____  
+    	| |     | |   | | |   | |  | |    ) _ ( |  _____) |     | |   | |  | |     | |  (_____  ) 
+    	| |     | |   | | |   | |  | |   / ( ) \| (     | |     | |   | |  | |     | |        ) | 
+    	| (____/\ (___) | (___) |  | |  ( /   \ ) )     | (____/\ (___) |__) (___  | |  /\____) | 
+ 	(_______(_______|_______)  )_(  |/     \|/      (_______(_______)_______/  )_(  \_______) 
+                                                                                                  
 "
-echo -e "\t(i) By Ariel Jacob (aka. N3wRe4lity) "
+
+echo -e "\t      (i) By Ariel Jacob (aka. N3wRe4lity)"
 echo -e "\t(i) Bash script for search and looting exploits of the target open services."
-echo -e "\t(i) This script automates version scanning with nmap and searching with searchsploit for active services detected.\n\n"
+echo -e "\t(i) This script automates version scanning with nmap and searching with searchsploit for"
+echo -e "\t    active services detected.\n"
 
 ## Global Variables
 declare -a SERVICES_ARRAY
+VERSION="1.1"
 
 ##  Global line separator
 function line() {
-	for i in $(seq 1 90); do echo -ne "${redColour}="; done; echo -e "${endColour}"
+	for i in $(seq 110); do echo -ne "${redColour}="; done; echo -e "${endColour}"
 #Create a line of 80 dashes in red. -n is for no line breaks, and -e is for parsing special characters
+}
+
+# version function
+function version(){
+	echo -e "\t${redColour}LootXploits${endColour}${blueColour} - version ${VERSION}${endColour}"
+        echo -e "\n\t${greenColour}Thanks for use LootXploit!!${endColour}"
 }
 
 ## Help Panel options
@@ -127,18 +136,21 @@ function especificLoot() {
 }
 
 ## read and process flags:
+parameter_counter=0
+
 while getopts ":g:e: vh" opt
 do
     case $opt in
-        v ) echo -e "\t${yellowColour}LootXploits${endColour}${blueColour} - version 1.1${endColour}"
-	    echo -e "\n\t${greenColour}Thanks for use LootXploit!!${endColour}"
+        v ) version
 	    exit 0 ;;
         h ) helpPanel ;;  # Show help panel.
 	g ) VAR_TARGET=$OPTARG
+	    let parameter_counter+=1
 	    echo -e "\n\t${greenColour}[info] Target defined for scan the services in their general versions.${endColour}"
 	    generalLoot # service-general search function.
-	    thanksGoodbye ;;
+	    thanksGoodbye;;
         e ) VAR_TARGET=$OPTARG
+	    let parameter_counter+=1
 	    echo -e "\n\t${cyanColour}[info] Target defined for scan the services in their especific versions.${endColour}"
 	    especificLoot   # service-specific search function
 	    thanksGoodbye ;;
@@ -155,5 +167,10 @@ shift $((OPTIND-1))
 ## Show help if an unwanted character is entered
 if [ -n "$1" ]; then
 	echo -e "\n\t${yellowColour}[!] Invalid option or character.\n${endColour}"
+	helpPanel
+fi
+
+if [ $parameter_counter -eq 0 ]; then
+	version
 	helpPanel
 fi
