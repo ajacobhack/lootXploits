@@ -64,7 +64,7 @@ function  helpPanel() {
 	echo -e "\n\t${grayColour}[-h]${endColour}${yellowColour} Show this help panel${endColour}"
 	echo -e "\n\t${grayColour}[-v]${endColour}${yellowColour} Show version${endColour}"
         echo -e "\n\t${grayColour}[-g]${endColour}${yellowColour} Pass IP or domain as argument; performs search for exploits for general version of services.${endColour}"
-        echo -e "\n\t${grayColour}[-e]${endColour}${yellowColour} Pass IP or domain as argument; performs search for exploits for especific version of services. \n\tWarning: if you don't get a result, try -t only ${endColour}"
+        echo -e "\n\t${grayColour}[-e]${endColour}${yellowColour} Pass IP or domain as argument; performs search for exploits for especific version of services. \n\tWarning: if you don't get a result, try -g only ${endColour}"
         exit 0
 }
 
