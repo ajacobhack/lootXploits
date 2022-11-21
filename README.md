@@ -10,6 +10,7 @@ Para correr el script correctamente se debe tener instalado:
 
 # ¿Cómo ejecuto la herramienta?
 Para empezar, al ejecutar la herramienta veremos lo siguiente:
+
 ![image](https://user-images.githubusercontent.com/99199970/202933256-f395a58b-106a-4845-b2d7-bd29751f9e42.png)
 
 Options
@@ -33,6 +34,7 @@ La herramienta cuenta con dos modos principales:
 
 
 - especific: Se pasa como argumento la IP o dominio del objetivo y se realiza una búsqueda de exploits para los servicios detectados en su versión específica, teniendo en cuenta nombre específico de servicio y número de versión.
+
 ![image](https://user-images.githubusercontent.com/99199970/202933792-95b6c63f-a653-4221-b312-1149089df3d8.png)
 
 ![image](https://user-images.githubusercontent.com/99199970/202933822-57c35d71-a7b0-4442-aa6e-e612a61dcd75.png)
