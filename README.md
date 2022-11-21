@@ -11,7 +11,7 @@ To run the script correctly you must have installed:
 # How do I run the tool?
 To begin with, when executing the tool we will see the following:
 
-![image](https://user-images.githubusercontent.com/99199970/202933256-f395a58b-106a-4845-b2d7-bd29751f9e42.png)
+![image](https://user-images.githubusercontent.com/99199970/203101580-2b1461d8-9044-457a-bdf6-01a2c91379e1.png)
 
 Options
 [-h] Show this help panel
