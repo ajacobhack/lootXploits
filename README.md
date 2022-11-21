@@ -21,7 +21,7 @@ Options
 [-g] Pass IP or domain as argument; performs search for exploits for general version of services.
 
 [-e] Pass IP or domain as argument; performs search for exploits for especific version of services. 
-     Warning: if you don't get a result, try -t only 
+     Warning: if you don't get a result, try -g only 
 
 The tool has two main modes:
 - general: The IP or domain of the target is passed as an argument and a search for exploits is performed for the services detected in their general version and name. E.g. ftp service
